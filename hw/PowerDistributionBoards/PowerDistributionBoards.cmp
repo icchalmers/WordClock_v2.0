@@ -1,0 +1,220 @@
+Cmp-Mod V01 Created by Cvpcb (2015-05-12 BZR 5652)-product   date = Fri 26 Jun 2015 10:10:38 BST
+
+BeginCmp
+TimeStamp = /558D1661;
+Reference = C1;
+ValeurCmp = CP;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_11.5x8mm_RM3.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /557982B6;
+Reference = P1;
+ValeurCmp = WS2812b_in;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578EA8E;
+Reference = P2;
+ValeurCmp = 5V+_In;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578F0B1;
+Reference = P3;
+ValeurCmp = GND_In;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /55799423;
+Reference = P4;
+ValeurCmp = WS2812b_out;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5579D510;
+Reference = P5;
+ValeurCmp = GND_Out;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5579CEA0;
+Reference = P6;
+ValeurCmp = 5V+_Out;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5579D656;
+Reference = P7;
+ValeurCmp = GND_Out;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5579CF38;
+Reference = P8;
+ValeurCmp = 5V+_Out;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /55783984;
+Reference = U1;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /557865BD;
+Reference = U2;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55787FB8;
+Reference = U3;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55787FB2;
+Reference = U4;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55788F79;
+Reference = U5;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55788F7F;
+Reference = U6;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55788F8B;
+Reference = U7;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55788F85;
+Reference = U8;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55789741;
+Reference = U9;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55789747;
+Reference = U10;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55789753;
+Reference = U11;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578974D;
+Reference = U12;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55789759;
+Reference = U13;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578975F;
+Reference = U14;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578976B;
+Reference = U15;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /55789765;
+Reference = U16;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578A075;
+Reference = U17;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578A07B;
+Reference = U18;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578A087;
+Reference = U19;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578A081;
+Reference = U20;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578A08D;
+Reference = U21;
+ValeurCmp = WS2812b_Strip_In;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /5578A093;
+Reference = U22;
+ValeurCmp = WS2812b_Strip_Out;
+IdModule  = FabLibrary:WS2812b_strip_conn;
+EndCmp
+
+EndListe

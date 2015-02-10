@@ -1,0 +1,6 @@
+Model/OldVersions
+Model/SolidifiedClockToMake/OldVersions
+*.lck
+*.bak
+*kicad_pcb-bak
+Backup_of_*

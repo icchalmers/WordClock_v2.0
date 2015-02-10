@@ -1,0 +1,164 @@
+Cmp-Mod V01 Created by Cvpcb (2015-05-12 BZR 5652)-product   date = Fri 05 Jun 2015 12:27:18 BST
+
+BeginCmp
+TimeStamp = /556FBD5E;
+Reference = BT1;
+ValeurCmp = Battery;
+IdModule  = FabLibrary:Battery_Holder_Cell_20mm_smd;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F3BA7;
+Reference = C1;
+ValeurCmp = 4.7u;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F3AC7;
+Reference = C2;
+ValeurCmp = 4.7u;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /55718FEB;
+Reference = C3;
+ValeurCmp = 10u;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /5572143D;
+Reference = C4;
+ValeurCmp = 0.1u;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /557090B7;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F342F;
+Reference = M1;
+ValeurCmp = ESP-07;
+IdModule  = FabLibrary:ESP-07;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F3ED9;
+Reference = P1;
+ValeurCmp = 5V_input;
+IdModule  = FabLibrary:Socket_Strip_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F9C82;
+Reference = P2;
+ValeurCmp = WS2812b_Out;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F5392;
+Reference = P3;
+ValeurCmp = UART;
+IdModule  = FabLibrary:Socket_Strip_Straight_1x03_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /5570FFB2;
+Reference = R1;
+ValeurCmp = 5k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /55715157;
+Reference = R2;
+ValeurCmp = 5k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /55710DCF;
+Reference = R3;
+ValeurCmp = 5k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /5570DEF1;
+Reference = R4;
+ValeurCmp = 5k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /557208AF;
+Reference = R5;
+ValeurCmp = 500;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /556FCCE0;
+Reference = R6;
+ValeurCmp = 5k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /556FCE30;
+Reference = R7;
+ValeurCmp = 5k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /55708FA9;
+Reference = R8;
+ValeurCmp = 1k;
+IdModule  = FabLibrary:C_1206_HandSoldering_IainEdit;
+EndCmp
+
+BeginCmp
+TimeStamp = /5570D73C;
+Reference = SW1;
+ValeurCmp = SWITCH_INV;
+IdModule  = FabLibrary:SlideSwitch_smd;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F388A;
+Reference = U1;
+ValeurCmp = NCP1117ST33T3G;
+IdModule  = FabLibrary:SOT223_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = /556FB126;
+Reference = U2;
+ValeurCmp = DS3232;
+IdModule  = FabLibrary:Maxim_SOIC-20_W20-H2;
+EndCmp
+
+BeginCmp
+TimeStamp = /556F35A2;
+Reference = U3;
+ValeurCmp = SN74LVC1T45;
+IdModule  = FabLibrary:TI-DBV-SOT23_handsolder;
+EndCmp
+
+BeginCmp
+TimeStamp = /557202D6;
+Reference = U4;
+ValeurCmp = WS2812b;
+IdModule  = FabLibrary:WS2812b_handsolder;
+EndCmp
+
+EndListe
