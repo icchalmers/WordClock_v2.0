@@ -5,6 +5,8 @@ You can follow the inital evolution of the clock [on my class website](http://fa
 
 This clock is an evolution of [WordClock_v1.0](https://github.com/icchalmers/WordClock_v1.0).
 
+![WordClock](WordClock.jpg)
+
 # Project Parts
 
 ## Model
