@@ -2,6 +2,7 @@
 #ifndef USERCONFIG_H
 #define USERCONFIG_H
 
+const char* MDNSName = "wordclock";
 const char* ssid = "";
 const char* password = "";
 
