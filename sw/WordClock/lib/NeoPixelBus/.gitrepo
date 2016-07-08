@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:Makuna/NeoPixelBus.git
+	branch = master
+	commit = 929d4f7f03f6c0c70e6603dda9068c7bfb34012f
+	parent = 1b6ff32c373167036d4f707b360615e89cf4aa50
+	cmdver = 0.3.0
