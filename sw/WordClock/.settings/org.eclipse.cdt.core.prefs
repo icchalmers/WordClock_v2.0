@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/0.910961921/PATH/delimiter=;
+environment/project/0.910961921/PATH/operation=replace
+environment/project/0.910961921/PATH/value=C\:\\Program Files\\ConEmu;C\:\\Program Files\\ConEmu\\ConEmu;C\:\\ProgramData\\Oracle\\Java\\javapath;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C\:\\Program Files\\Git\\cmd;C\:\\WINDOWS\\system32;C\:\\WINDOWS;C\:\\WINDOWS\\System32\\Wbem;C\:\\Python27;D\:\\Programs\\MATLAB\\R2016a\\runtime\\win64;D\:\\Programs\\MATLAB\\R2016a\\bin;D\:\\Programs\\LLVM\\bin;D\:\\Programs\\uncrustify;C\:\\Python27\\Scripts;D\:\\Users\\Iain.DESKTOP-7F8DRSI\\AppData\\Local\\atom\\bin
+environment/project/0.910961921/append=true
+environment/project/0.910961921/appendContributed=true
