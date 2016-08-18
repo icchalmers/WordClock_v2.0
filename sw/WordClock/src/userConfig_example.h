@@ -2,9 +2,12 @@
 #ifndef USERCONFIG_H
 #define USERCONFIG_H
 
+#include <stdint.h>
+
 const char* MDNSName = "wordclock";
 const char* ssid = "";
 const char* password = "";
+const uint16_t pixel_count = 12;
 
 #define DEBUG_LED 2
 #define DEBUG_LED_ON digitalWrite(DEBUG_LED,0);

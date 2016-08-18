@@ -6,18 +6,20 @@
 // Status/state display codes
 // Negative is bad
 #define DISPLAY_STATUS_UNKNOWN_ERROR -1
+#define DISPLAY_STATUS_WIFI_DISCONNECTED -2
 // Neutral is off
 #define DISPLAY_STATUS_DISABLE 0
 // Positive is good
 #define DISPLAY_STATUS_OK 1
+#define DISPLAY_STATUS_INIT 2
 
 #define COLOUR_SATURATION 64
 
 class WS2812bDisplay {
   public:
-    const uint16_t PixelCount = 12;
+    const uint16_t pixel_count;
 
-    WS2812bDisplay();
+    WS2812bDisplay(uint16_t pixel_count);
     void init();
     void setStatus(int status);
 

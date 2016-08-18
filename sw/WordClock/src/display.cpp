@@ -15,8 +15,9 @@
 #include "Arduino.h"
 #include "./display.h"
 
-WS2812bDisplay::WS2812bDisplay() :
-  strip(NeoPixelBus<NeoGrbFeature , Neo800KbpsMethod>(PixelCount, 3)) {
+WS2812bDisplay::WS2812bDisplay(uint16_t pixel_count) :
+  pixel_count(pixel_count),
+  strip(NeoPixelBus<NeoGrbFeature , Neo800KbpsMethod>(pixel_count, 3)) {
 }
 
 void WS2812bDisplay::init() {
@@ -36,6 +37,13 @@ void WS2812bDisplay::setStatus(int status) {
        break;
     case DISPLAY_STATUS_UNKNOWN_ERROR :
        strip.SetPixelColor(0, RED);
+       break;
+    case DISPLAY_STATUS_WIFI_DISCONNECTED :
+       strip.SetPixelColor(0,
+         RgbColor(COLOUR_SATURATION, 0, COLOUR_SATURATION));
+       break;
+    case DISPLAY_STATUS_INIT :
+       strip.SetPixelColor(0, BLUE);
        break;
   }
   strip.Show();

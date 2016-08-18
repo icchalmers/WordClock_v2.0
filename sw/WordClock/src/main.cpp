@@ -24,14 +24,16 @@
 #include "userConfig.h"
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
+#include <WiFiManager.h>
 #include "./OTA.h"
 #include "./display.h"
 
 extern const char* ssid;
 extern const char* password;
 extern const char* MDNSName;
+extern const uint16_t pixel_count;
 
-WS2812bDisplay display;
+WS2812bDisplay display(pixel_count);
 
 void setup() {
     Serial.begin(115200);
@@ -43,19 +45,24 @@ void setup() {
     display.init();
 
     Serial.println("Booting");
-    WiFi.mode(WIFI_STA);
+    display.setStatus(DISPLAY_STATUS_INIT);
 
-    WiFi.begin(ssid, password);
-
-    while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-        WiFi.begin(ssid, password);
-        Serial.println("Retrying connection...");
+    // Start the wifi manager. If the clock can't connect to a wifi network it
+    // connected to previosuly, it puts up it's own AP called "WordClock". When
+    // the user connects to it, the captive portal takes them to a config page
+    // so that they can configure the wifi. The portal stays open for 10
+    // minutes.
+    WiFiManager wifiManager;
+    wifiManager.setTimeout(600);  // 600s = 10 minutes
+    if (!wifiManager.autoConnect("WordClock")) {
+      Serial.println("Failed to connect and timeout reached");
+      display.setStatus(DISPLAY_STATUS_WIFI_DISCONNECTED);
+    } else {
+      display.setStatus(DISPLAY_STATUS_OK);
+      Serial.println("Ready");
     }
 
     ota_init(MDNSName);
-
-    Serial.println("Ready");
-    display.setStatus(DISPLAY_STATUS_OK);
 }
 
 void loop() {
