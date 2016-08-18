@@ -7,7 +7,7 @@ const char* ssid = "";
 const char* password = "";
 
 #define DEBUG_LED 2
-#define DEBUG_LED_ON digitalWrite(LED,0);
-#define DEBUG_LED_OFF digitalWrite(LED,1);
+#define DEBUG_LED_ON digitalWrite(DEBUG_LED,0);
+#define DEBUG_LED_OFF digitalWrite(DEBUG_LED,1);
 
 #endif  //USERCONFIG_H

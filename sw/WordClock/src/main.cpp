@@ -24,17 +24,23 @@
 #include "userConfig.h"
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
-#include "OTA.h"
+#include "./OTA.h"
+#include "./display.h"
 
 extern const char* ssid;
 extern const char* password;
 extern const char* MDNSName;
 
+WS2812bDisplay display;
+
 void setup() {
     Serial.begin(115200);
 
     // Debug LED
+    DEBUG_LED_OFF
     pinMode(DEBUG_LED, OUTPUT);
+
+    display.init();
 
     Serial.println("Booting");
     WiFi.mode(WIFI_STA);
@@ -49,6 +55,7 @@ void setup() {
     ota_init(MDNSName);
 
     Serial.println("Ready");
+    display.setStatus(DISPLAY_STATUS_OK);
 }
 
 void loop() {
