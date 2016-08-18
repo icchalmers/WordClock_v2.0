@@ -1,3 +1,24 @@
+/*******************************************************************************
+* FILENAME : main.cpp
+*
+* DESCRIPTION :
+*     An ESP8266 and WS2812b LED based chaos word clock
+*
+*     Make sure to fill in the details in "userConfig_example.h" and re-save it
+*     as "userConfig.h".
+*
+* LINKS :
+*     https://github.com/icchalmers/WordClock_v2.0
+*     http://fabacademy.org/archives/2015/eu/students/chalmers.iain/final-project-summary-wordclock20.html
+*
+* AUTHOR : Iain Chalmers
+*
+* Copyright (c) 2016 Iain Chalmers
+*
+* START DATE : 5th July 2016
+*
+*******************************************************************************/
+
 #include "Arduino.h"
 #include <stdint.h>
 #include "userConfig.h"
