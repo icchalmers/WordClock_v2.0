@@ -10,7 +10,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -29,7 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:FabLibrary
 LIBS:WordClock_v2-cache
 EELAYER 25 0
 EELAYER END
@@ -613,7 +611,7 @@ Wire Notes Line
 Wire Notes Line
 	9450 1475 8400 1475
 Wire Wire Line
-	2850 3400 2750 3400
+	2750 3400 2850 3400
 Wire Wire Line
 	2750 3300 2850 3300
 Wire Wire Line
@@ -696,7 +694,7 @@ F 3 "" H 8100 1700 60  0000 C CNN
 	1    8100 1700
 	1    0    0    -1  
 $EndComp
-Text GLabel 2850 3600 2    60   Input ~ 0
+Text GLabel 2850 3500 2    60   Input ~ 0
 WS2812b_In
 NoConn ~ 2750 3500
 NoConn ~ 1400 3700
@@ -780,8 +778,6 @@ F 3 "" H 6700 1200 60  0000 C CNN
 $EndComp
 NoConn ~ 1400 3600
 Wire Wire Line
-	2850 3600 2750 3600
-Wire Wire Line
 	5700 3200 5475 3200
 NoConn ~ 5475 3100
 Wire Wire Line
@@ -803,4 +799,10 @@ Wire Wire Line
 	9275 825  9275 875 
 Wire Wire Line
 	9275 1375 9275 1275
+Wire Wire Line
+	2850 3500 2800 3500
+Wire Wire Line
+	2800 3500 2800 3400
+Connection ~ 2800 3400
+NoConn ~ 2750 3600
 $EndSCHEMATC
