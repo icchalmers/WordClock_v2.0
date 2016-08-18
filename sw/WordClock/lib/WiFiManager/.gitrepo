@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tzapu/WiFiManager
+	branch = master
+	commit = e0b8acb8dd8e419e378e71abed77fe926c2e5b54
+	parent = 90b101cf9870ef1c1788135d047137bb2599a6da
+	cmdver = 0.3.0
