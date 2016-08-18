@@ -12,6 +12,9 @@ extern const char* MDNSName;
 void setup() {
     Serial.begin(115200);
 
+    // Debug LED
+    pinMode(DEBUG_LED, OUTPUT);
+
     Serial.println("Booting");
     WiFi.mode(WIFI_STA);
 
@@ -28,6 +31,5 @@ void setup() {
 }
 
 void loop() {
-    ArduinoOTA.handle(); // must be called frequently
-
+    ArduinoOTA.handle();  // must be called frequently
 }

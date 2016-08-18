@@ -1,2 +1,3 @@
 .pioenvs
 src/userConfig.h
+*.gch

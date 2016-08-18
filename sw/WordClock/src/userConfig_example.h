@@ -6,5 +6,8 @@ const char* MDNSName = "wordclock";
 const char* ssid = "";
 const char* password = "";
 
+#define DEBUG_LED 2
+#define DEBUG_LED_ON digitalWrite(LED,0);
+#define DEBUG_LED_OFF digitalWrite(LED,1);
 
 #endif  //USERCONFIG_H
