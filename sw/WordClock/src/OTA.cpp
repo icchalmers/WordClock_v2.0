@@ -55,6 +55,7 @@ void _ota_onError(ota_error_t error) {
   default:
     Serial.println("Unknown error");
   }
+  _ota_displayError(error);
   Serial.println("\r\nRestarting ESP8266");
   ESP.restart();
 }
