@@ -73,7 +73,7 @@ void _ota_displayStart() {
   display.clear();
 
   for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
-    display.setPixelColor(i, RgbColor(32, 32, 0));
+    display.setPixelColor(i, display.YELLOW);
   }
   display.show();
   display.setStatus(DISPLAY_STATUS_OTA);
