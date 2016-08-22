@@ -1,5 +1,19 @@
-#ifndef DISPLAY_H
-#define DISPLAY_H
+/*******************************************************************************
+* FILENAME : WS2812bDisplay.h
+*
+* DESCRIPTION :
+*     A display driver class to control the WS2812b LEDs in the word clock
+*
+* AUTHOR : Iain Chalmers
+*
+* Copyright (c) 2016 Iain Chalmers
+*
+* START DATE : 18th August 2016
+*
+*******************************************************************************/
+
+#ifndef WS2812BDISPLAY_H
+#define WS2812BDISPLAY_H
 
 #include "..\lib\NeoPixelBus\src\NeoPixelBus.h"
 
@@ -43,4 +57,4 @@ private:
   NeoPixelBus < NeoGrbFeature, Neo800KbpsMethod > strip;
 };
 
-#endif // DISPLAY_H
+#endif // WS2812BDISPLAY_H

@@ -30,7 +30,7 @@
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>
 #include "./OTA.h"
-#include "./display.h"
+#include "./WS2812bDisplay.h"
 
 extern const char *ssid;
 extern const char *password;

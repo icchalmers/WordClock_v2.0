@@ -1,8 +1,8 @@
 /*******************************************************************************
-* FILENAME : display.cpp
+* FILENAME : WS2812bDisplay.cpp
 *
 * DESCRIPTION :
-*     A driver class to control the WS2812b LEDs in the word clock
+*     Implementation of the WS2812bDisplay class
 *
 * AUTHOR : Iain Chalmers
 *
@@ -13,7 +13,7 @@
 *******************************************************************************/
 
 #include "Arduino.h"
-#include "./display.h"
+#include "./WS2812bDisplay.h"
 
 WS2812bDisplay::WS2812bDisplay(uint16_t pixel_count) :
   pixel_count(pixel_count),
