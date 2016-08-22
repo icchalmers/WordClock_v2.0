@@ -25,6 +25,7 @@ void _ota_onStart() {
 
 void _ota_onEnd() {
   Serial.println("\r\nOTA update finished. Restarting.");
+  _ota_displayEnd();
 }
 
 void _ota_onError(ota_error_t error) {
@@ -59,9 +60,50 @@ void _ota_onError(ota_error_t error) {
 }
 
 void _ota_onProgress(int progress, int total) {
-  int percentageComplete = (progress / (total / 100));
+  int percentage_complete = (progress / (total / 100));
 
-  Serial.printf("Progress: %u%%\r", percentageComplete);
+  Serial.printf("Progress: %u%%\r", percentage_complete);
+
+  _ota_displayProgress(percentage_complete);
 }
 
-void _ota_displayStart() {}
+// Makes the top line of the display yellow on OTA start
+void _ota_displayStart() {
+  display.clear();
+
+  for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
+    display.setPixelColor(i, RgbColor(32, 32, 0));
+  }
+  display.show();
+  display.setStatus(DISPLAY_STATUS_OTA);
+}
+
+// Makes the top line fill up green to show progress
+void _ota_displayProgress(int percentage_complete) {
+  int progress_end_pixel = percentage_complete / PIXELS_PER_LINE;
+
+  for (uint16_t i = 1; i < progress_end_pixel; i++) {
+    display.setPixelColor(i, display.GREEN);
+  }
+  display.show();
+}
+
+// Makes the top line all green when OTA update is finished, then clears the
+// screen before reset.
+void _ota_displayEnd() {
+  for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
+    display.setPixelColor(i, display.GREEN);
+  }
+  display.show();
+  delay(1000); // Should really avoid delay() and use Ticker instead...
+  display.clear();
+  display.setStatus(DISPLAY_STATUS_DISABLE);
+}
+
+// Makes the top line of the display red on an OTA update error
+void _ota_displayError(ota_error_t error) {
+  for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
+    display.setPixelColor(i, display.RED);
+  }
+  display.show();
+}

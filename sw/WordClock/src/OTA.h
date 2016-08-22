@@ -3,6 +3,8 @@
 
 #include <ArduinoOTA.h>
 
+#define PIXELS_PER_LINE 11
+
 void ota_init(const char *hostname);
 void _ota_onStart();
 void _ota_onProgress(int progress,

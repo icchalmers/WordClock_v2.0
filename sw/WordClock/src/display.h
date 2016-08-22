@@ -14,6 +14,7 @@
 // Positive is good
 #define DISPLAY_STATUS_OK 1
 #define DISPLAY_STATUS_INIT 2
+#define DISPLAY_STATUS_OTA 3
 
 #define COLOUR_SATURATION 64
 
@@ -21,6 +22,13 @@ class WS2812bDisplay {
 public:
 
   const uint16_t pixel_count;
+  const RgbColor RED    = RgbColor(COLOUR_SATURATION, 0, 0);
+  const RgbColor GREEN  = RgbColor(0, COLOUR_SATURATION, 0);
+  const RgbColor BLUE   = RgbColor(0, 0, COLOUR_SATURATION);
+  const RgbColor YELLOW =
+    RgbColor(COLOUR_SATURATION / 2, COLOUR_SATURATION / 2, 0);
+  const RgbColor WHITE = RgbColor(COLOUR_SATURATION);
+  const RgbColor BLACK = RgbColor(0);
 
   WS2812bDisplay(uint16_t pixel_count);
   void init();
@@ -28,15 +36,11 @@ public:
   void clear();
   void setPixelColor(uint16_t pixel_number,
                      RgbColor color);
+  void show();
 
 private:
 
   NeoPixelBus < NeoGrbFeature, Neo800KbpsMethod > strip;
-  const RgbColor RED   = RgbColor(COLOUR_SATURATION, 0, 0);
-  const RgbColor GREEN = RgbColor(0, COLOUR_SATURATION, 0);
-  const RgbColor BLUE  = RgbColor(0, 0, COLOUR_SATURATION);
-  const RgbColor WHITE = RgbColor(COLOUR_SATURATION);
-  const RgbColor BLACK = RgbColor(0);
 };
 
 #endif // DISPLAY_H
