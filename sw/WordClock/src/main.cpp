@@ -35,7 +35,8 @@
 extern const char *ssid;
 extern const char *password;
 extern const char *MDNSName;
-extern const uint16_t pixel_count;
+extern const uint16_t pixel_count; // TODO: stop using this globaly and pass
+                                   // around instead. Also, use #define.
 
 WS2812bDisplay display(pixel_count);
 
