@@ -73,7 +73,7 @@ void _ota_displayStart() {
   display.clear();
 
   for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
-    display.setPixelColor(i, display.YELLOW);
+    display.setPixelColor(i, display.yellow);
   }
   display.show();
   display.setStatus(DISPLAY_STATUS_OTA);
@@ -84,7 +84,7 @@ void _ota_displayProgress(int percentage_complete) {
   int progress_end_pixel = percentage_complete / PIXELS_PER_LINE;
 
   for (uint16_t i = 1; i < progress_end_pixel; i++) {
-    display.setPixelColor(i, display.GREEN);
+    display.setPixelColor(i, display.green);
   }
   display.show();
 }
@@ -93,7 +93,7 @@ void _ota_displayProgress(int percentage_complete) {
 // screen before reset.
 void _ota_displayEnd() {
   for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
-    display.setPixelColor(i, display.GREEN);
+    display.setPixelColor(i, display.green);
   }
   display.show();
   delay(1000); // Should really avoid delay() and use Ticker instead...
@@ -104,7 +104,7 @@ void _ota_displayEnd() {
 // Makes the top line of the display red on an OTA update error
 void _ota_displayError(ota_error_t error) {
   for (uint16_t i = 1; i < PIXELS_PER_LINE + 1; i++) {
-    display.setPixelColor(i, display.RED);
+    display.setPixelColor(i, display.red);
   }
   display.show();
 }
