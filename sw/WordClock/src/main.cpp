@@ -23,6 +23,8 @@
 
 #include "Arduino.h"
 #include <stdint.h>
+#include <array>
+#include <vector>
 #include "userConfig.h"
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
@@ -35,8 +37,7 @@
 extern const char *ssid;
 extern const char *password;
 extern const char *MDNSName;
-extern const uint16_t pixel_count; // TODO: stop using this globaly and pass
-                                   // around instead. Also, use #define.
+extern const uint16_t pixel_count;
 
 WS2812bDisplay display(pixel_count);
 
@@ -73,4 +74,19 @@ void setup() {
 
 void loop() {
   ArduinoOTA.handle(); // must be called frequently
+  uint16_t x[] { 1, 3, 5, 7 };
+  std::vector<uint16_t> v = { 2, 4, 6, 8, 10 };
+
+  // Set pixels using array
+  display.clear();
+  display.setPixelColor(x, 4, display.blue);
+  display.show();
+
+  delay(200);
+
+  // Set pixels using vector
+  display.clear();
+  display.setPixelColor(v, display.red);
+  display.show();
+  delay(200);
 }

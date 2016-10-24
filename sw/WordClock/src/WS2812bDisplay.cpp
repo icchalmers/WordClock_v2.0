@@ -14,6 +14,7 @@
 
 #include "Arduino.h"
 #include "./WS2812bDisplay.h"
+#include <vector>
 
 const RgbColor WS2812bDisplay::red    = RgbColor(COLOUR_SATURATION, 0, 0);
 const RgbColor WS2812bDisplay::green  = RgbColor(0, COLOUR_SATURATION, 0);
@@ -73,6 +74,43 @@ void WS2812bDisplay::show() {
   strip.Show();
 }
 
-void WS2812bDisplay::setPixelColor(uint16_t pixel_number, RgbColor color) {
-  strip.SetPixelColor(pixel_number, color);
+bool WS2812bDisplay::setPixelColor(uint16_t pixel_number, RgbColor color) {
+  bool error = false;
+
+  if (pixel_number <= pixel_count) {
+    strip.SetPixelColor(pixel_number, color);
+  } else {
+    error = true;
+  }
+  return error;
+}
+
+// Set all the pixels specified in an array to one color.
+bool WS2812bDisplay::setPixelColor(uint16_t *pixel_numbers, uint16_t num_pixels,
+                                   RgbColor color) {
+  bool error = false;
+
+  for (uint16_t n = 0; n < num_pixels; n++) {
+    if (pixel_numbers[n] <= pixel_count) {
+      strip.SetPixelColor(pixel_numbers[n], color);
+    } else {
+      error = true;
+    }
+  }
+  return error;
+}
+
+// Set all the pixels specified in a vector to one color.
+bool WS2812bDisplay::setPixelColor(const std::vector<uint16_t>& v,
+                                   RgbColor                     color) {
+  bool error = false;
+
+  for (auto x : v) {
+    if (x <= pixel_count) {
+      strip.SetPixelColor(x, color);
+    } else {
+      error = true;
+    }
+  }
+  return error;
 }

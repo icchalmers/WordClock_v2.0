@@ -16,6 +16,7 @@
 #define WS2812BDISPLAY_H
 
 #include "..\lib\NeoPixelBus\src\NeoPixelBus.h"
+#include <vector>
 
 // Status/state display codes
 // Negative is bad
@@ -47,8 +48,13 @@ public:
   void init();
   void setStatus(int status);
   void clear();
-  void setPixelColor(uint16_t pixel_number,
+  bool setPixelColor(uint16_t pixel_number,
                      RgbColor color);
+  bool setPixelColor(uint16_t pixel_numbers[],
+                     uint16_t num_pixels,
+                     RgbColor color);
+  bool setPixelColor(const std::vector < uint16_t >& v,
+                     RgbColor                        color);
   void show();
 
 private:
