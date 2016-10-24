@@ -1,5 +1,5 @@
-#ifndef OTA_H
-#define OTA_H
+#ifndef OTA_HPP
+#define OTA_HPP
 
 #include <ArduinoOTA.h>
 
@@ -16,4 +16,4 @@ void _ota_displayProgress(int progress);
 void _ota_displayEnd();
 void _ota_displayError(ota_error_t error);
 
-#endif // OTA_H
+#endif // OTA_HPP

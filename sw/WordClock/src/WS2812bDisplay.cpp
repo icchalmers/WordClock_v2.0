@@ -13,7 +13,7 @@
 *******************************************************************************/
 
 #include "Arduino.h"
-#include "./WS2812bDisplay.h"
+#include "./WS2812bDisplay.hpp"
 #include <vector>
 
 const RgbColor WS2812bDisplay::red    = RgbColor(COLOUR_SATURATION, 0, 0);

@@ -1,7 +1,7 @@
 #include "Arduino.h"
-#include "OTA.h"
+#include "OTA.hpp"
 #include <ArduinoOTA.h>
-#include "./WS2812bDisplay.h"
+#include "./WS2812bDisplay.hpp"
 
 extern WS2812bDisplay display;
 

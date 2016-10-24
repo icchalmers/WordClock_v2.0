@@ -31,8 +31,8 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>
-#include "./OTA.h"
-#include "./WS2812bDisplay.h"
+#include "./OTA.hpp"
+#include "./WS2812bDisplay.hpp"
 #include "./wordList.hpp"
 
 extern const char *ssid;
