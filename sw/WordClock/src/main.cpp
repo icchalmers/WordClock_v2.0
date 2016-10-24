@@ -33,6 +33,7 @@
 #include <WiFiManager.h>
 #include "./OTA.h"
 #include "./WS2812bDisplay.h"
+#include "./wordList.hpp"
 
 extern const char *ssid;
 extern const char *password;
@@ -74,19 +75,8 @@ void setup() {
 
 void loop() {
   ArduinoOTA.handle(); // must be called frequently
-  uint16_t x[] { 1, 3, 5, 7 };
-  std::vector<uint16_t> v = { 2, 4, 6, 8, 10 };
 
-  // Set pixels using array
-  display.clear();
-  display.setPixelColor(x, 4, display.blue);
+  display.setPixelColor(word_it, display.red);
+  display.setPixelColor(word_is, display.green);
   display.show();
-
-  delay(200);
-
-  // Set pixels using vector
-  display.clear();
-  display.setPixelColor(v, display.red);
-  display.show();
-  delay(200);
 }
