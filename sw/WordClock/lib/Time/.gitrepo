@@ -6,6 +6,6 @@
 [subrepo]
 	remote = https://github.com/PaulStoffregen/Time
 	branch = master
-	commit = 22c59471a8adab8bebafcb0486384b346228458e
-	parent = cf70ac91e09cd5a8bf0aa79b14c9810a279642d6
-	cmdver = 0.3.0
+	commit = 01083f838c037d50d03e2dd228c56ef35eeb064b
+	parent = a9830436408b8c53802ef5279877218fc4f80939
+	cmdver = 0.3.1
