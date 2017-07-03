@@ -5,7 +5,7 @@
    inspired by:
    http://www.esp8266.com/viewtopic.php?f=29&t=2520
    https://github.com/chriscook8/esp-arduino-apboot
-   https://github.com/esp8266/Arduino/tree/esp8266/hardware/esp8266com/esp8266/libraries/DNSServer/examples/CaptivePortalAdvanced
+   https://github.com/esp8266/Arduino/tree/master/libraries/DNSServer/examples/CaptivePortalAdvanced
    Built by AlexT https://github.com/tzapu
    Licensed under MIT license
  **************************************************************/
@@ -64,6 +64,14 @@ WiFiManager::WiFiManager() {
 }
 
 void WiFiManager::addParameter(WiFiManagerParameter *p) {
+  if(_paramsCount + 1 > WIFI_MANAGER_MAX_PARAMS)
+  {
+    //Max parameters exceeded!
+	DEBUG_WM("WIFI_MANAGER_MAX_PARAMS exceeded, increase number (in WiFiManager.h) before adding more parameters!");
+	DEBUG_WM("Skipping parameter with ID:");
+	DEBUG_WM(p->getID());
+	return;
+  }
   _params[_paramsCount] = p;
   _paramsCount++;
   DEBUG_WM("Adding parameter");
@@ -149,6 +157,19 @@ boolean WiFiManager::autoConnect(char const *apName, char const *apPassword) {
   return startConfigPortal(apName, apPassword);
 }
 
+boolean WiFiManager::configPortalHasTimeout(){
+    if(_configPortalTimeout == 0 || wifi_softap_get_station_num() > 0){
+      _configPortalStart = millis(); // kludge, bump configportal start time to skew timeouts
+      return false;
+    }
+    return (millis() > _configPortalStart + _configPortalTimeout);
+}
+
+boolean WiFiManager::startConfigPortal() {
+  String ssid = "ESP" + String(ESP.getChipId());
+  return startConfigPortal(ssid.c_str(), NULL);
+}
+
 boolean  WiFiManager::startConfigPortal(char const *apName, char const *apPassword) {
   //setup AP
   WiFi.mode(WIFI_AP_STA);
@@ -165,7 +186,11 @@ boolean  WiFiManager::startConfigPortal(char const *apName, char const *apPasswo
   connect = false;
   setupConfigPortal();
 
-  while (_configPortalTimeout == 0 || millis() < _configPortalStart + _configPortalTimeout) {
+  while(1){
+
+    // check if timeout
+    if(configPortalHasTimeout()) break;
+
     //DNS
     dnsServer->processNextRequest();
     //HTTP

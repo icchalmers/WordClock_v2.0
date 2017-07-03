@@ -5,7 +5,7 @@
    inspired by:
    http://www.esp8266.com/viewtopic.php?f=29&t=2520
    https://github.com/chriscook8/esp-arduino-apboot
-   https://github.com/esp8266/Arduino/tree/esp8266/hardware/esp8266com/esp8266/libraries/DNSServer/examples/CaptivePortalAdvanced
+   https://github.com/esp8266/Arduino/tree/master/libraries/DNSServer/examples/CaptivePortalAdvanced
    Built by AlexT https://github.com/tzapu
    Licensed under MIT license
  **************************************************************/
@@ -70,6 +70,7 @@ class WiFiManager
     boolean       autoConnect(char const *apName, char const *apPassword = NULL);
 
     //if you want to always start the config portal, without trying to connect first
+    boolean       startConfigPortal();
     boolean       startConfigPortal(char const *apName, char const *apPassword = NULL);
 
     // get the AP name of the config portal, so it can be used in the callback
@@ -159,6 +160,7 @@ class WiFiManager
     void          handleNotFound();
     void          handle204();
     boolean       captivePortal();
+    boolean       configPortalHasTimeout();
 
     // DNS server
     const byte    DNS_PORT = 53;

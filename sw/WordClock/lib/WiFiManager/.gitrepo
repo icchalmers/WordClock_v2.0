@@ -6,6 +6,6 @@
 [subrepo]
 	remote = https://github.com/tzapu/WiFiManager
 	branch = master
-	commit = e0b8acb8dd8e419e378e71abed77fe926c2e5b54
-	parent = 90b101cf9870ef1c1788135d047137bb2599a6da
-	cmdver = 0.3.0
+	commit = 5e9248651ff7d3fafb1dbabb8fb1d0db34ab3749
+	parent = 3086f1a21c512bb0c0dd97c4a02cfeb4ef90ed2b
+	cmdver = 0.3.1
