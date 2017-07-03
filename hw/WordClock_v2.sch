@@ -28,7 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:IainPersonalLibrary
 LIBS:WordClock_v2-cache
 EELAYER 25 0
 EELAYER END
@@ -560,17 +559,10 @@ Wire Notes Line
 Wire Wire Line
 	2750 3700 2850 3700
 Wire Wire Line
-	725  2825 975  2825
+	725  2825 1200 2825
 Wire Wire Line
 	975  2825 975  2875
 Connection ~ 725  2825
-Wire Wire Line
-	975  3500 1400 3500
-Wire Wire Line
-	975  3175 975  3500
-Wire Wire Line
-	1400 3300 975  3300
-Connection ~ 975  3300
 Wire Notes Line
 	2425 2100 2425 600 
 Wire Notes Line
@@ -691,7 +683,6 @@ F 3 "" H 5375 1350 60  0000 C CNN
 	1    5375 1350
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1400 3600
 Wire Wire Line
 	5700 3200 5475 3200
 NoConn ~ 5475 3100
@@ -766,4 +757,29 @@ F 3 "" H 6450 1150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 6325 1150
+$Comp
+L R R?
+U 1 1 595AA86F
+P 1200 3025
+F 0 "R?" V 1280 3025 50  0000 C CNN
+F 1 "5k" V 1200 3025 50  0000 C CNN
+F 2 "FabLibrary:C_1206_HandSoldering_IainEdit" V 1130 3025 30  0001 C CNN
+F 3 "" H 1200 3025 30  0000 C CNN
+	1    1200 3025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 2825 1200 2875
+Connection ~ 975  2825
+Wire Wire Line
+	1200 3175 1200 3600
+Wire Wire Line
+	1200 3300 1400 3300
+Wire Wire Line
+	1400 3500 975  3500
+Wire Wire Line
+	975  3500 975  3175
+Wire Wire Line
+	1200 3600 1400 3600
+Connection ~ 1200 3300
 $EndSCHEMATC
