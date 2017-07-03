@@ -27,6 +27,15 @@ License along with NeoPixel.  If not, see
 
 #include <Arduino.h>
 
+// some platforms do not define this standard progmem type for some reason
+//
+#ifndef PGM_VOID_P
+#define PGM_VOID_P const void *
+#endif
+
+// '_state' flags for internal state
+#define NEO_DIRTY   0x80 // a change was made to pixel data that requires a show
+
 #include "internal/NeoHueBlend.h"
 
 #include "internal/RgbColor.h"
@@ -36,9 +45,11 @@ License along with NeoPixel.  If not, see
 #include "internal/RgbwColor.h"
 
 #include "internal/NeoColorFeatures.h"
+#include "internal/DotStarColorFeatures.h"
 
 #include "internal/Layouts.h"
 #include "internal/NeoTopology.h"
+#include "internal/NeoRingTopology.h"
 #include "internal/NeoTiles.h"
 #include "internal/NeoMosaic.h"
 
@@ -47,27 +58,40 @@ License along with NeoPixel.  If not, see
 #include "internal/NeoBuffer.h"
 #include "internal/NeoSpriteSheet.h"
 #include "internal/NeoBitmapFile.h"
-
+#include "internal/NeoDib.h"
 #include "internal/NeoEase.h"
 #include "internal/NeoGamma.h"
 
 #if defined(ARDUINO_ARCH_ESP8266)
+
 #include "internal/NeoEsp8266DmaMethod.h"
 #include "internal/NeoEsp8266UartMethod.h"
-#include "internal/NeoEsp8266BitBangMethod.h"
+#include "internal/NeoEspBitBangMethod.h"
+#include "internal/DotStarGenericMethod.h"
+
+#elif defined(ARDUINO_ARCH_ESP32)
+
+#include "internal/NeoEspBitBangMethod.h"
+#include "internal/DotStarGenericMethod.h"
+
 #elif defined(__arm__) // must be before ARDUINO_ARCH_AVR due to Teensy incorrectly having it set
+
 #include "internal/NeoArmMethod.h"
+#include "internal/DotStarGenericMethod.h"
+
 #elif defined(ARDUINO_ARCH_AVR)
+
 #include "internal/NeoAvrMethod.h"
+#include "internal/DotStarAvrMethod.h"
+
 #else
 #error "Platform Currently Not Supported, please add an Issue at Github/Makuna/NeoPixelBus"
 #endif
 
+#if !defined(__AVR_ATtiny85__)
+#include "internal/DotStarSpiMethod.h"
+#endif
 
-
-
-// '_state' flags for internal state
-#define NEO_DIRTY   0x80 // a change was made to pixel data that requires a show
 
 template<typename T_COLOR_FEATURE, typename T_METHOD> class NeoPixelBus
 {
@@ -77,13 +101,27 @@ public:
    
     NeoPixelBus(uint16_t countPixels, uint8_t pin) :
         _countPixels(countPixels),
+        _state(0),
         _method(pin, countPixels, T_COLOR_FEATURE::PixelSize)
+    {
+    }
+
+    NeoPixelBus(uint16_t countPixels, uint8_t pinClock, uint8_t pinData) :
+        _countPixels(countPixels),
+        _state(0),
+        _method(pinClock, pinData, countPixels, T_COLOR_FEATURE::PixelSize)
+    {
+    }
+
+    NeoPixelBus(uint16_t countPixels) :
+        _countPixels(countPixels),
+        _state(0),
+        _method(countPixels, T_COLOR_FEATURE::PixelSize)
     {
     }
 
     ~NeoPixelBus()
     {
-
     }
 
     operator NeoBufferContext<T_COLOR_FEATURE>()
@@ -130,7 +168,7 @@ public:
         _state &= ~NEO_DIRTY;
     };
 
-    uint8_t* Pixels() const
+    uint8_t* Pixels() 
     {
         return _method.getPixels();
     };
@@ -189,7 +227,7 @@ public:
     {
         if (first < _countPixels &&
             last < _countPixels &&
-            first < last)
+            first <= last)
         {
             uint8_t temp[T_COLOR_FEATURE::PixelSize];
             uint8_t* pixels = _method.getPixels();
@@ -285,7 +323,7 @@ public:
     
 
  
-private:
+protected:
     const uint16_t _countPixels; // Number of RGB LEDs in strip
 
     uint8_t _state;     // internal state
@@ -358,4 +396,5 @@ private:
         // intentional no dirty
     }
 };
+
 
